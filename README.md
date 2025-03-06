@@ -1,2 +1,8 @@
-# ChatAI_using_react
-It's a frontend-only AI chatbot built with React and Gemini AI (open-source key), designed for fast and efficient interactions. consider this as a beta version. Try to test it on a desktop!
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

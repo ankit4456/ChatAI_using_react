@@ -1,0 +1,281 @@
+/* Base Theme Variables */
+:root {
+  --primary: #007bff;
+  --secondary: #cc9743;
+  --bg: #f5f5f5; /* Light background */
+  --text: #222; /* Slightly darker text for contrast */
+  --container-bg: #fff; /* White container background */
+}
+
+.dark-mode {
+  --bg: #121212; /* Dark mode background */
+  --text: #ddd; /* Light text for dark mode */
+  --container-bg: linear-gradient(135deg, #2c3e50, #35424a);
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  perspective: 1000px;
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+/* Centered Container */
+.container {
+  background: var(--container-bg);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.dark-mode .container {
+  background: var(--container-bg);
+}
+
+/* Title Styling */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Textarea */
+textarea {
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text);
+  font-size: 1rem;
+  min-height: 100px;
+  resize: none;
+}
+
+.dark-mode textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ddd;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease, transform 0.3s ease;
+  min-width: 150px;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.generate-button {
+  background: var(--primary);
+  color: white;
+}
+
+.generate-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.generate-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+button:active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  animation: ripple 0.5s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Error & Answer Message */
+.error-message {
+  color: #ff4d4d;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.answer {
+  background: rgba(0, 128, 0, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: #b87a33;
+}
+
+/* Fixed Contact Links */
+.fixed-contact-links {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.contact-link {
+  display: flex;
+  justify-content: center;
+}
+
+.fixed-contact-links a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.fixed-contact-links a:hover {
+  color: var(--primary);
+}
+
+/* Text Link */
+.text-link {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Blink Effect */
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 🌟 3D Falling Star Animation */
+.falling-star {
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  width: 5px;
+  height: 5px;
+  box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+  animation: twinkle 0.3s ease-in-out, fall 15s linear infinite;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Twinkle Effect */
+@keyframes twinkle {
+  0% {
+    background: white;
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+  }
+  50% {
+    background: rgba(240, 240, 240, 0.8);
+    box-shadow: 0 0 8px rgba(220, 220, 220, 0.8), 0 0 16px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    background: white;
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+  }
+}
+
+/* 3D Falling Effect */
+@keyframes fall {
+  0% {
+    transform: translateX(0vw) translateY(0vh) translateZ(200px) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(5vw) translateY(30vh) translateZ(-100px) rotate(120deg);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translateX(-5vw) translateY(60vh) translateZ(-200px) rotate(240deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(10vw) translateY(100vh) translateZ(-400px) rotate(360deg);
+    opacity: 0;
+  }
+}
