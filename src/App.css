@@ -6,7 +6,7 @@
   --text: #222; /* Slightly darker text for contrast */
   --container-bg: #fff; /* White container background */
 }
-/* this is the comment is just to cheak that i am ready to use.  the github desktp or not  */
+/* this is the comment.  is just to cheak that i am ready to use.  the github desktp or not  */
 .dark-mode {
   --bg: #121212; /* Dark mode background */
   --text: #ddd; /* Light text for dark mode */
